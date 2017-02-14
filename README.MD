@@ -1,5 +1,7 @@
 #Simple Telegram based game
 
+[![Telegram](http://trellobot.doomdns.org/telegrambadge.svg)](http://devatlant.com)
+
 This project uses under the hood a popular java abstraction library for accessing Telegram Bot API - [org.telegram.telegrambots](https://github.com/rubenlagus/TelegramBots)
 
 ## How to
