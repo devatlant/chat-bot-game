@@ -1,9 +1,14 @@
 #Simple Telegram based game
 
-## Step by step installation instruction
+This project uses under the hood a popular java abstraction library for accessing Telegram Bot API - [org.telegram.telegrambots](https://github.com/rubenlagus/TelegramBots)
 
+## How to
+
+#### Requirements
 1. JDK/JRE 1.8
 2. maven for dependency management and building stuff
+
+#### Step by step installation instruction
 3. In your active Telegram account find a special bot [@BotFather](https://telegram.me/BotFather)
 4. Then send command `/newbot`
 5. Give a unique name to your new bot
