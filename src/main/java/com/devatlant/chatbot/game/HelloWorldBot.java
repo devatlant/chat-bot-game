@@ -1,6 +1,5 @@
 package com.devatlant.chatbot.game;
 
-import org.apache.commons.codec.binary.StringUtils;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;

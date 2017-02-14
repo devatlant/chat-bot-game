@@ -21,7 +21,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>Start</mainClass>
+                            <mainClass>com.devatlant.chatbot.game.Start</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
