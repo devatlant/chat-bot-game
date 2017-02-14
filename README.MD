@@ -24,5 +24,4 @@ This project uses under the hood a popular java abstraction library for accessin
 2. Find your bot (which you have created in step 2 see previous section)
 3. Start to send your guess to the chat and enjoy
 
-[[ee](https://www.evernote.com/l/ABGzCzHt_wBFfpmLBLk1Cap6j1rkGR434tY)]
-
+![screenshot](https://raw.githubusercontent.com/devatlant/chat-bot-game/master/res/telegram_screenshot.jpg)
