@@ -11,9 +11,18 @@ This project uses under the hood a popular java abstraction library for accessin
 2. maven for dependency management and building stuff
 
 ### Step by step installation instruction
-3. In your active Telegram account find a special bot [@BotFather](https://telegram.me/BotFather)
-4. Then send command `/newbot`
-5. Give a unique name to your new bot
-6. Copy the telegram token to access the HTTP API
-7. In your terminal/cmd run `mvn package`
-8. In your terminal/cmd run `java -jar -Dtelegram.secret.key=MySecretKeyFromStep6 target/simpleBot-1.0-SNAPSHOT-jar-with-dependencies.jar`
+1. In your active Telegram account find a special bot [@BotFather](https://telegram.me/BotFather)
+2. Then send command `/newbot`
+3. Give a unique name to your new bot
+4. Copy the telegram token to access the HTTP API
+5. In your terminal/cmd run `mvn package`
+6. In your terminal/cmd run `java -jar -Dtelegram.secret.key=MySecretKeyFromStep6 target/simpleBot-1.0-SNAPSHOT-jar-with-dependencies.jar`
+
+### How to use
+
+1. Open your Telegram app (mobile/Desktop)
+2. Find your bot (which you have created in step 2 see previous section)
+3. Start to send your guess to the chat and enjoy
+
+[[ee](https://www.evernote.com/l/ABGzCzHt_wBFfpmLBLk1Cap6j1rkGR434tY)]
+
