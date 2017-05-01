@@ -1,4 +1,4 @@
-#Simple Telegram based game
+# Simple Telegram based game
 
 [![Telegram](http://trellobot.doomdns.org/telegrambadge.svg)](http://devatlant.com)
 
@@ -16,7 +16,7 @@ This project uses under the hood a popular java abstraction library for accessin
 3. Give a unique name to your new bot
 4. Copy the telegram token to access the HTTP API
 5. In your terminal/cmd run `mvn package`
-6. In your terminal/cmd run `java -jar -Dtelegram.secret.key=MySecretKeyFromStep6 target/simpleBot-1.0-SNAPSHOT-jar-with-dependencies.jar`
+6. In your terminal/cmd run `java -jar -Dtelegram.secret.key=MySecretKeyFromStep4 target/simpleBot-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
 ### How to use
 
