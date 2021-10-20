@@ -85,7 +85,7 @@ public class BotEngine extends TelegramLongPollingBot {
         try {
             sendMessage(messageToBeSend); // Call method to send the message
         } catch (TelegramApiException e) {
-            LOGGER.error("error occurred while sending message {}",message, e);
+            LOGGER.error("error occurred while sending message {}", message, e);
         }
     }
 
