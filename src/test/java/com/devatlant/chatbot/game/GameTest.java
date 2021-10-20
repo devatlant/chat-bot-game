@@ -2,9 +2,11 @@ package com.devatlant.chatbot.game;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.telegram.telegrambots.api.objects.Message;
 import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
+
 
 class GameTest {
     private Game testSubject;
