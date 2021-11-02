@@ -23,3 +23,5 @@ This project uses under the hood a popular java abstraction library for accessin
 3. Start to send your guess to the chat and enjoy
 
 ![screenshot](https://raw.githubusercontent.com/devatlant/chat-bot-game/master/res/telegram_screenshot.jpg)
+
+## Test from git and Vim
