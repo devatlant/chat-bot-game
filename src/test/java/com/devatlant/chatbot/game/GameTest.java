@@ -22,7 +22,7 @@ class GameTest {
     void should_respond_with_start() {
         Message start = buildMessage("/start");
         ResponseWithCounter res = testSubject.reactOnGamerMessage(start);
-        assertEquals(RESPONSE.START, res);
+        assertEquals(RESPONSE.START, res.code);
     }
 
     public Message buildMessage(final String text){
