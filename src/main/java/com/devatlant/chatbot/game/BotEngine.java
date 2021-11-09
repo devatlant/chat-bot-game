@@ -7,8 +7,7 @@ import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
-import static com.devatlant.chatbot.game.RESPONSE.START;
-import static com.devatlant.chatbot.game.RESPONSE.WRONG_COMMAND;
+import java.util.Random;
 
 /**
  * Created by yev on 2/10/17.
@@ -24,7 +23,7 @@ public class BotEngine extends TelegramLongPollingBot {
         if (secretKey == null) {
             throw new IllegalArgumentException("Please, specify the system property with -Dtelegram.secret.key");
         }
-        game = new Game(100);
+        game = new Game(10, new Random());
         LOGGER.info("bot started");
     }
 
@@ -47,13 +46,13 @@ public class BotEngine extends TelegramLongPollingBot {
     private void processMessage(Message message) {
         LOGGER.info(String.format("process message [%s] from client [%s %s]",
             message.getText(), message.getFrom().getFirstName(), message.getFrom().getLastName()));
-        final RESPONSE response = game.reactOnGamerMessage(message);
+        final ResponseWithCounter response = game.reactOnGamerMessage(message);
         sendMsg(message, response);
     }
 
-    private void sendMsg(final Message message, final RESPONSE response) {
+    private void sendMsg(final Message message, final ResponseWithCounter response) {
         final String text;
-        switch (response) {
+        switch (response.code) {
             case START:
                 text = "Available commands : /start /help";
                 break;
@@ -70,10 +69,10 @@ public class BotEngine extends TelegramLongPollingBot {
                 text = String.format("\uD83C\uDFC6 %s, you win! Congratulations!", message.getFrom().getFirstName());
                 break;
             case HIGHER:
-                text = "\uD83D\uDE1E nope, try higer";
+                text = String.format("\\uD83D\\uDE1E nope, try higer. Current try counter is %s", response.counter);
                 break;
             case LOWER:
-                text = "\uD83D\uDE1E nope, try lower";
+                text = String.format("\uD83D\uDE1E nope, try lower. Current try counter is %s", response.counter);
                 break;
             default:
                 throw new IllegalArgumentException(String.format("this input [%s] is not implemented yet!", message.getText()));

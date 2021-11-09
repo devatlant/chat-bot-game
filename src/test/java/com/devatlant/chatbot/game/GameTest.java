@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.telegram.telegrambots.api.objects.Message;
 import java.io.IOException;
+import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -14,13 +15,13 @@ class GameTest {
 
     @BeforeEach
     public void setup(){
-        testSubject = new Game(100);
+        testSubject = new Game(100, new Random());
     }
 
     @org.junit.jupiter.api.Test
     void should_respond_with_start() {
         Message start = buildMessage("/start");
-        RESPONSE res = testSubject.reactOnGamerMessage(start);
+        ResponseWithCounter res = testSubject.reactOnGamerMessage(start);
         assertEquals(RESPONSE.START, res);
     }
 
@@ -30,5 +31,17 @@ class GameTest {
         } catch (IOException e) {
            throw new RuntimeException("wrong json syntax for "+ text,e);
         }
+    }
+
+    @Test
+    public void should_return_answer_with_counter(){
+        //given
+        testSubject = new Game(100, new Random());
+        Message message = buildMessage("1");
+        //run
+        ResponseWithCounter res = testSubject.reactOnGamerMessage(message);
+
+        // assert
+        assertEquals(1, res.counter);
     }
 }

@@ -2,44 +2,49 @@ package com.devatlant.chatbot.game;
 
 import org.telegram.telegrambots.api.objects.Message;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Game {
     private final int answer;
     public final int upperBound;
+    public final AtomicLong guessCounter = new AtomicLong(0);
+    public final Random random;
 
-    public Game(final int upperBound) {
-        final Random random = new Random();
-        answer = random.nextInt(upperBound);
+    public Game(final int upperBound, Random random) {
+        this.random = random;
+        answer = this.random.nextInt(upperBound);
         this.upperBound = upperBound;
     }
 
-    public RESPONSE reactOnGamerMessage(final Message message){
+    public ResponseWithCounter reactOnGamerMessage(final Message message){
         if (message == null){
             throw new IllegalArgumentException("message can't be null!");
         }
         if (!message.hasText()){
-            return RESPONSE.WRONG_NUMBER_FORMAT;
+            return new ResponseWithCounter(RESPONSE.WRONG_NUMBER_FORMAT, guessCounter);
         }
         final String gamerInput = message.getText();
         if (gamerInput.startsWith("/")){
             if (gamerInput.equals("/start")){
-                return RESPONSE.START;
+                return new ResponseWithCounter(RESPONSE.START, guessCounter);
             }
             if (gamerInput.equals("/help")){
-                return RESPONSE.HELP;
+                return new ResponseWithCounter(RESPONSE.HELP, guessCounter);
             }
         }
         if (!isInteger(gamerInput)){
-            return RESPONSE.WRONG_NUMBER_FORMAT;
+            return new ResponseWithCounter(RESPONSE.WRONG_NUMBER_FORMAT, guessCounter);
         }
         int guess = Integer.parseInt(gamerInput);
         if (guess == answer){
-            return RESPONSE.FINISH;
+            return new ResponseWithCounter(RESPONSE.FINISH, guessCounter);
         }
         else if (guess > answer){
-            return RESPONSE.LOWER;
+            guessCounter.incrementAndGet();
+            return new ResponseWithCounter(RESPONSE.LOWER, guessCounter);
         }else {
-            return RESPONSE.HIGHER;
+            guessCounter.incrementAndGet();
+            return new ResponseWithCounter(RESPONSE.HIGHER, guessCounter);
         }
     }
 
