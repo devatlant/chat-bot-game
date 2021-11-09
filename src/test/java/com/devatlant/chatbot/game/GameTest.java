@@ -40,7 +40,6 @@ class GameTest {
         Message message = buildMessage("1");
         //run
         ResponseWithCounter res = testSubject.reactOnGamerMessage(message);
-
         // assert
         assertEquals(1, res.counter);
     }
