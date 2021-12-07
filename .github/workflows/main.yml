@@ -38,7 +38,7 @@ jobs:
     - name: Run jUnit test
       run: mvn test
       
-      - name: Repo Visualizer
+    - name: Repo Visualizer
       # You may pin to the exact commit or the version.
       # uses: githubocto/repo-visualizer@fd43c6c299627ad88e07698290fb2d32fac3305a
       uses: githubocto/repo-visualizer@0.7.1
