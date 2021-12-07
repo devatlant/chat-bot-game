@@ -58,7 +58,7 @@ jobs:
         # The branch name to push the diagram to (branch will be created if it does not yet exist). For example: diagram
         branch: # optional
         # Whether to push the new commit back to the repository. Must be true or false. Default: true
-        should_push: true
+        should_push: false
         # If given, the name of an artifact to be created containing the diagram. Default: don't create an artifact.
         artifact_name: repo.svg 
 
