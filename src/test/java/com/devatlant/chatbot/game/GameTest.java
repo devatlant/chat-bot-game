@@ -1,10 +1,13 @@
 package com.devatlant.chatbot.game;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.glassfish.jersey.server.model.Parameterized;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.telegram.telegrambots.api.objects.Message;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -43,5 +46,17 @@ class GameTest {
 
         // assert
         assertEquals(1, res.counter);
+    }
+
+    @Test
+    public void should_return_true_when_input_data_is_integer(){
+        //given
+        testSubject = new Game(100, new Random());
+
+        //run
+        boolean res = testSubject.isInteger("1");
+
+        // assert
+        assertEquals(true, res);
     }
 }

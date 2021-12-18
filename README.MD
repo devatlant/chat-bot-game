@@ -1,4 +1,5 @@
 # Simple Telegram based game
+![example workflow](https://github.com/Ruslan1213/chat-bot-game/actions/workflows/main.yml/badge.svg)
 
 This project uses under the hood a popular java abstraction library for accessing Telegram Bot API - [org.telegram.telegrambots](https://github.com/rubenlagus/TelegramBots)
 
