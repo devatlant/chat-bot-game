@@ -23,7 +23,7 @@ public class BotEngine extends TelegramLongPollingBot {
         if (secretKey == null) {
             throw new IllegalArgumentException("Please, specify the system property with -Dtelegram.secret.key");
         }
-        game = new Game(10, new Random());
+        game = new Game(100, new Random());
         LOGGER.info("bot started");
     }
 
