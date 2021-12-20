@@ -25,4 +25,4 @@ This project uses under the hood a popular java abstraction library for accessin
 ![screenshot](https://raw.githubusercontent.com/devatlant/chat-bot-game/master/res/telegram_screenshot.jpg)
 
 ## Test from git and Vim
-Max
+Max Test2
