@@ -17,6 +17,7 @@ public class Game {
     }
 
     public ResponseWithCounter reactOnGamerMessage(final Message message){
+        guessCounter.incrementAndGet();
         if (message == null){
             throw new IllegalArgumentException("message can't be null!");
         }
