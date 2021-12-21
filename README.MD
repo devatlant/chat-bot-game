@@ -4,6 +4,25 @@
 
 This project uses under the hood a popular java abstraction library for accessing Telegram Bot API - [org.telegram.telegrambots](https://github.com/rubenlagus/TelegramBots)
 
+---
+### Author (fork)
+#### Anastasia
+JE ME PRÉSENTE
+Étudiante du programme franco-ukrainien de double diplôme avec de l'Université Lumière Lyon 2 et l'Université Nationale d'Économie de Kharkiv Simon Kuznets. Je suis à la recherche d'un stage comme chef de projet dans le domaine l'informatique
+ÉDUCATION ET FORMATION
+10/2020 – EN COURS – Kharkiv, Ukraine
+Master 2 en Statistique et Data Science pour le Management
+**Université Lumière Lyon 2**
+10/2020 – EN COURS – Kharkiv, Ukraine
+Master 2 en Systèmes et Technologies d'Information
+l'Université Nationale d'Économie de Kharkiv Simon Kuznets
+09/2015 – 06/2020 – Kharkiv, Ukraine
+Licence en Publicité et Relations Publiques
+l'Université Nationale d'Économie de Kharkiv Simon Kuznets
+*EXPÉRIENCE PROFESSIONNELLE*
+
+---
+
 ## How to
 
 ### Requirements
