@@ -7,6 +7,7 @@ import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
+
 import java.util.Random;
 
 /**
@@ -23,8 +24,8 @@ public class BotEngine extends TelegramLongPollingBot {
         if (secretKey == null) {
             throw new IllegalArgumentException("Please, specify the system property with -Dtelegram.secret.key");
         }
-        game = new Game(10, new Random());
-        LOGGER.info("bot started");
+        game = new Game(100, new Random());
+        logInfo("bot started", "");
     }
 
 
@@ -44,8 +45,10 @@ public class BotEngine extends TelegramLongPollingBot {
     }
 
     private void processMessage(Message message) {
-        LOGGER.info(String.format("process message [%s] from client [%s %s]",
-            message.getText(), message.getFrom().getFirstName(), message.getFrom().getLastName()));
+        String user = message.getFrom().getFirstName() + message.getFrom().getLastName();
+        String messageText = String.format("process message [%s] from client [%s %s]",
+                message.getText(), message.getFrom().getFirstName(), message.getFrom().getLastName());
+        logInfo(messageText, user);
         final ResponseWithCounter response = game.reactOnGamerMessage(message);
         sendMsg(message, response);
     }
@@ -78,9 +81,9 @@ public class BotEngine extends TelegramLongPollingBot {
                 throw new IllegalArgumentException(String.format("this input [%s] is not implemented yet!", message.getText()));
         }
         SendMessage messageToBeSend = new SendMessage() // Create a SendMessage object with mandatory fields
-            .setChatId(message.getChatId())
-            .setReplyToMessageId(message.getMessageId())
-            .setText(text);
+                .setChatId(message.getChatId())
+                .setReplyToMessageId(message.getMessageId())
+                .setText(text);
         try {
             sendMessage(messageToBeSend); // Call method to send the message
         } catch (TelegramApiException e) {
@@ -88,5 +91,8 @@ public class BotEngine extends TelegramLongPollingBot {
         }
     }
 
-
+    private void logInfo(String message, String user) {
+        LOGGER.info(message);
+        System.out.println("message [" + message + "] was sent with success for user [" + user + "]");
+    }
 }
