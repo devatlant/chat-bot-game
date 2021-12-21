@@ -23,6 +23,20 @@ Licence en Publicité et Relations Publiques
 l'Université Nationale d'Économie de Kharkiv Simon Kuznets
 *EXPÉRIENCE PROFESSIONNELLE*
 
+05/2021 – 09/2021 – Kharkiv, Ukraine Chef de projet
+IM - digital
+* Communication avec les clients
+* Planification budgétaire
+* Organisation du travail de l'équipe autour de la tâche demandée ◦ Fournir au client des rapports sur l'avancement des tâches
+* Présentation des tâches terminées au client
+
+09/2021  – Kharkiv, Ukraine
+CHEF DE PROJET – SWEETSOFT
+* Élaboration d'un plan de projet
+* Présentation de travaux
+* Motivation de l'équipe
+* Organisation du travail de l'équipe autour de la tâche demandée
+
 ---
 
 ## How to
