@@ -44,4 +44,16 @@ class GameTest {
         // assert
         assertEquals(1, res.counter);
     }
+
+    @Test
+    public void is_integer_for_correct_number(){
+        //given
+        assertTrue(Game.isInteger("5"));
+    }
+
+    @Test
+    public void is_integer_for_string_message(){
+        //given
+        assertFalse(Game.isInteger("string_message"));
+    }
 }
